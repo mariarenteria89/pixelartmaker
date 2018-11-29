@@ -1,9 +1,9 @@
 // Select color input
-    const color = $('#colorpicker').val();
+    const colorInput = document.getElementById('colorPicker');
 
 // Select size input
-    const height = $('#inputHeight').val();
-    const width = $('#inputWidth').val();
+    const height = document.getElementById('inputHeight');
+    const width = document.getElementById('inputWidth');
 
 
 // When size is submitted by the user, call makeGrid()
@@ -18,19 +18,19 @@ function makeGrid(x,y) {
     //tr= table row
 
     // Build Physical Box
-    for (var i = 1; i <= x; i++){
+    for (let i = 1; i <= x; i++){
       $('#pixelCanvas').append('<tr id=table' + i + '></tr>');
-      for (var c = 1; c <=y; c++){
+      for (let c = 1; c <=y; c++){
         $('#table' + i).append('<td></td>');
       }
     }
     //add color to cell
-    $('td').click(function addColor()){
+    $('td').click(function addColor(){
 
-      if $(this).attr('style') {
+      if ($(this).attr('style')) {
           $(this).removeAttr('style')
       } else {
-          $(this).attr('style', 'background-color + color');
+          $(this).attr('style', 'background-color;' + color);
       }
-    }
+    })
 }
