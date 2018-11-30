@@ -4,16 +4,16 @@
 // Select size input
     let table = document.getElementById('pixelCanvas');
     let sizePicker = document.getElementById('sizePicker');
-    
+
+    let N = document.getElementById('inputHeight');
+    let W = document.getElementById('inputWidth');
+
   sizePicker.addEventListener('click', MouseEvent => {
     MouseEvent.preventDefault();
-    console.log(MouseEvent + 'test');
+    console.log(MouseEvent + sizePicker);
+    console.log(N.value, W.value);
   });
 
-
-    //Previous Code below
-    //let height = document.getElementById('inputHeight');
-    //let width = document.getElementById('inputWidth');
 
 
 
