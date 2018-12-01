@@ -10,8 +10,13 @@
 
   sizePicker.addEventListener('click', MouseEvent => {
     MouseEvent.preventDefault();
-    console.log(MouseEvent + sizePicker);
-    console.log(N.value, W.value);
+    //Please edit remove
+    //table.firstElementChild.remove();
+    makeGrid(N, W);
+    //testing below with console.log
+    //console.log(MouseEvent + sizePicker);
+    //console.log(N.value, W.value);
+    //console.log(colorInput.value);
   });
 
 
@@ -23,25 +28,18 @@
     //makeGrid(height,width);
   //})
 
-//function makeGrid()
-    // x= height, and y= width
-    //$('tr').remove();
-    //tr= table row
+function makeGrid(N, W){
+    //testing below
+    //console.log(N.value, W.value);
 
-    // Build Physical Box
-    //for (let i = 1; i <= x; i++){
-      //$('#pixelCanvas').append('<tr id=table' + i + '></tr>');
-      //for (let c = 1; c <=y; c++){
-        //$('#table' + i).append('<td></td>');
-      //}
-    //}
-    //add color to cell
-    //$('td').click(function addColor(){
-
-      //if ($(this).attr('style')) {
-          //$(this).removeAttr('style')
-      //} else {
-          //$(this).attr('style', 'background-color;' + color);
-      //}
-    //})
-//}
+    for (let i = 0; i <= N; i++){
+      let row = table.insertRow(i);
+      for (let c = 0; c <= W; c++){
+        let cell = row.insertCell(c);
+        cell.addEventListener('click', MouseEvent => {
+          console.log(MouseEvent);
+          cell.style.backgroundColor = colorInput.value;
+        });
+      }
+    }
+}
